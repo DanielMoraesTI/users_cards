@@ -69,7 +69,6 @@ function renderUsers(arrayToRender: User[] = listUsers): void {
     if (activityRateDisplay) activityRateDisplay.textContent = `${activityPercentage}%`;
     if (activityBar) activityBar.style.width = `${activityPercentage}%`;
 
-
     arrayToRender.forEach(user => {
         const cardDiv = document.createElement("div");
         cardDiv.className = "user-card";
@@ -104,24 +103,24 @@ function renderUsers(arrayToRender: User[] = listUsers): void {
         users.appendChild(cardDiv);
     });
 
-        const toggleButtons = document.querySelectorAll(".btnDeactivate, .btnActivate");
-        toggleButtons.forEach(button => {
-            button.addEventListener("click", (e) => {
-                const target = e.target as HTMLButtonElement;
-                const id = parseInt(target.getAttribute("data-id") || "0");
-                toggleUserStatus(id);
-            });
+    const toggleButtons = document.querySelectorAll(".btnDeactivate, .btnActivate");
+    toggleButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const target = e.target as HTMLButtonElement;
+            const id = parseInt(target.getAttribute("data-id") || "0");
+            toggleUserStatus(id);
         });
+    });
 
-        const removeButtons = document.querySelectorAll(".btnRemove");
-            removeButtons.forEach(button => {
+    const removeButtons = document.querySelectorAll(".btnRemove");
+        removeButtons.forEach(button => {
             button.addEventListener("click", (e) => {
-                const target = e.target as HTMLButtonElement;
-                const id = parseInt(target.getAttribute("data-id") || "0");
-                removeUser(id);
-            });
+            const target = e.target as HTMLButtonElement;
+            const id = parseInt(target.getAttribute("data-id") || "0");
+            removeUser(id);
         });
-    }
+    });
+}
 
 function removeUser(id: number): void {
     if (confirm("Tem a certeza que deseja remover este utilizador?")) {
