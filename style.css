@@ -27,6 +27,41 @@ header {
     display: flex;
     justify-content: center;
     background-color: gray;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#userCount {
+    font-weight: bold;
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #ddd;
+}
+
+.stats-container p {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#activeCount {
+    background-color: #d4edda;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+#inactiveCount {
+    background-color: #f8d7da;
+    padding: 2px 8px;
+    border-radius: 10px;
 }
 
 .boxEnter {
@@ -35,24 +70,55 @@ header {
 
 button {
     border-radius: 5px;
+    color: white;
+    background-color: #ff4d4d;
+    border: none;
+    padding: 5px 10px;
+    transition: background 0.3s;
 }
 
 button:hover {
     transform: scale(1.1);
-    color: green;
+    color: white;
     background-color: red;
 }
 
-/* Layout do contentor */
+#formAdd {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    /*background-color: #eee;*/
+    margin-bottom: 10px;
+}
+
+.focus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.erro {
+    color: red;
+}
+
 .user-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 20px;
     list-style: none;
+    margin-left: auto;
+    margin-right: auto; 
 }
 
-/* Estilo do Cartão */
 .user-card {
     display: flex;
     flex-direction: column;
@@ -69,9 +135,134 @@ button:hover {
     color: #333;
 }
 
-/* Cores para o estado */
+.tasks-area {
+    margin: 10px 0;
+    padding: 5px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.tasks-area hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+
+.tasks-area p {
+    margin: 0;
+    color: #555;
+}
+
 .status-active { color: green; font-weight: bold; }
 .status-inactive { color: red; font-weight: bold; }
+
+.filters {
+    padding: 10px 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.user-card {
+    cursor: pointer;
+}
+
+.user-card:hover {
+    transform: scale(1.02); transition: 0.2s;
+
+}
+.details-container {
+    background-color: #f9f9f9; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+#filterActive {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+#showAll {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.search-container input {
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+}
+
+.search-container label {
+    font-weight: bold;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btnRemove {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btnRemove:hover {
+    background-color: #000;
+    color: white;
+    transform: scale(1.05);
+}
+
+.btnDeactivate {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnActivate {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnDeactivate:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+    color: white;
+}
+
+.btnActivate:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
 
 footer {
     grid-area: footer;
@@ -84,5 +275,33 @@ footer {
 }
 
 @media(min-width: 768px) {
+    
+#formAdd {
+    justify-content: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    /*background-color: #eee;*/
+    margin-bottom: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.focus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
 
 }
